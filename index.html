@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TUSTEP REQUEST | XML2RTF</title>
+        <!-- meta information -->
+        <meta name="author" content="Thomas Kollatz" />
+        <meta name="author" content="Hans-Werner Bartz" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=1024" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <!-- favicons -->
+        <link rel="shortcut icon" href="resources/img/favicon.png" />
+        <link rel="apple-touch-icon" href="resources/img/apple-touch-icon.png" />
+        <!-- CSS reset and grid -->
+        <link href="vendor/normalize/normalize-4.1.1.css" rel="stylesheet" />
+        <link href="vendor/skeleton/skeleton-2.0.4.css" rel="stylesheet" />
+        <!-- fonts -->
+        <link
+            href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,600italic,400italic,700italic,800,800italic&amp;subset=latin,latin-ext"
+            rel="stylesheet" type="text/css" />
+        <!-- styles for included libraries -->
+        <!-- chartist -->
+        <!-- <link rel="stylesheet" href="vendor/chartist/chartist.min-0.9.7.css" />
+-->
+        <!-- unite gallery -->
+        <link rel="stylesheet" href="vendor/unitegallery/css/unite-gallery.css" type="text/css" />
+        <!-- codemirror -->
+        <link rel="stylesheet" href="vendor/codemirror/lib/codemirror.css" />
+        <!-- highlight -->
+        <link rel="stylesheet" href="vendor/highlight/styles/default.css" />
+        <link rel="stylesheet" href="resources/css/hljs.linenumbering.css" />
+        <!-- swiper -->
+        <link rel="stylesheet" href="vendor/swiper/swiper.min.css" />
+        <!-- magnific popup -->
+        <link rel="stylesheet" href="vendor/magnific-popup/magnific-popup-1.1.0.css" />
+        <!-- standard presentation styles -->
+        <link href="resources/css/style.css" rel="stylesheet" />
+        <!-- custom presentation styles -->
+        <link href="resources/css/custom.css" rel="stylesheet" />
+        <!-- hint styles -->
+        <link href="resources/css/hint.css" rel="stylesheet" />
+        <!-- js needed in head -->
+        <!-- greuler -->
+        <script src="vendor/d3/d3-3.5.6.js"></script>
+        <script src="vendor/cola/cola.v3.min.js"></script>
+        <script src="vendor/greuler/greuler-0.5.5.min.js"></script>
+        <!-- html5 dataset shim for IE -->
+        <script src="vendor/impress/html5-dataset.js" type="text/javascript"></script>
+        <!-- UnifrakturCook for Headers -->
+        <link href="https://fonts.googleapis.com/css?family=UnifrakturCook:700|UnifrakturMaguntia"
+            rel="stylesheet" />
+    </head>
+    <body>
+        <div class="fallback-message">
+            <p> Your browser <strong>doesn't support the features required</strong> by
+                impress.mod.js, so you are presented with a simplified version of this presentation. </p>
+            <p> For the best experience please use the latest <strong>Chrome</strong>,
+                    <strong>Safari</strong> or <strong>Firefox</strong> browser. </p>
+        </div>
+        <div id="impress">
+            <div class="step">
+                <h5><strong>2019-09-26</strong> | Trier <a href="http://www.itug.de/ITUG2019.html">
+                        ITUG </a>
+                </h5>
+                <h5><strong><a href="http://85.214.95.119/ITUG2019/Programm.pdf">
+                        TUSTEP-Labor</a></strong>
+                </h5>
+                <h1 class="red down-100">Request | #*export</h1>
+                <ul class=" down-25"><li>Webservices nutzen mit TUSTEP</li> <li>XML2RTF</li></ul>
+                <!--<h5 class="down-100"> online <a href="https://digicademy.github.io/#"
+                        title="View the presentation online"> https://digicademy.github.io/#</a>
+                </h5>-->
+                <h5 class="down-100">
+                    <strong>
+                        <a href="https://orcid.org/0000-0003-1904-1841">Thomas Kollatz</a> | <a
+                            href="http://www.adwmainz.de/mitarbeiterinnen/profil/hans-werner-bartz.html"
+                            >Hans-Werner Bartz</a></strong> Digitale Akademie Mainz <!--<img src="resources/img/Twitter_bird_logo_2012.svg" alt="Twitter"
+                            class="twitter-icon" />
+                        <a href="https://twitter.com/kol_t" title="Thomas Kollatz on Twitter"
+                            >@kol_t</a>
+                        <!-\-<a href="https://twitter.com/digicademy" title="Digitale Akademie"
+                            >@digicademy</a>-\->-->
+                    <img src="resources/img/Octicons-mark-github.svg" alt="Twitter" class="gh-icon" />
+                    <a href="https://github.com/digicademy" title="digicademy on GitHub"
+                        >digicademy</a> | <a href="https://creativecommons.org/licenses/by/4.0/"
+                        >CC-BY 4.0</a>
+                </h5>
+            </div>
+            <div class="step">
+                <h2 class="red">00</h2>
+                <h3>TUSCRIPT – Arbeiten mit Skripten</h3>
+            </div>
+            <div class="step"><h2 class="red"><code>Gib Kommando &gt;</code></h2>
+                <table class="medium">
+                    
+                    <tr>
+                        <td><pre><code>#da,skripte,ran-ap</code></pre></td>
+                        <td><p class="down-25">Makrodatei einrichten</p></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre><code>#de,skripte</code></pre></td>
+                        <td><p class="down-25">Makrodatei definieren</p></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre><code>#in,$</code></pre></td>
+                        <td><p class="down-25">Inhalt der Makrodatei anzeigen</p></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="step"><h2 class="red"><code>Gib Anweisung &gt;</code></h2><table
+                class="medium">
+                
+                <tr>
+                    <td>
+                        <pre><code>h,$,?</code></pre></td>
+                    <td><p class="down-25">Inhaltsverzeichnis der Segmantdatei</p></td>
+                </tr>
+                <tr>
+                    <td>
+                        <pre><code>r,$,segmentname</code></pre></td>
+                    <td><p class="down-25">Skript speichern</p></td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <pre><code>h,$,segmentname</code></pre></td>
+                    <td><p class="down-25">Skript holen | bearbeiten</p></td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <pre><code>x #ma,&lt;editor&gt;</code></pre></td>
+                    <td><p class="down-25">Skript ausführen</p></td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <pre><code>x #*vemo,&lt;editor&gt;</code></pre></td>
+                    <td><p class="down-25">Skript vergleichen</p></td>
+                </tr>
+            </table>
+            </div>
+            <div class="step">
+                <h2 class="red">01</h2>
+                <h3>REQUEST</h3>
+            </div>
+            <div class="step">
+                <h2 class="red">Versuchsaufbau</h2>
+                <blockquote>Die TUSCRIPT-Funktion <code>REQUEST</code> ermöglicht es "Inhalte" aus
+                    dem Internet zu holen. Im TUSTEP-LAB soll diese Funktion vorgestellt werden und
+                    die Möglichkeiten der Weiterverarbeitung von REQUEST-Daten bzw.
+                    Datenanreicherungen vorhandener Daten über Webanfragen gezeigt
+                    werden.</blockquote>
+            </div>
+           <div class="step"><h2 class="red">Syntax</h2>
+                <pre><code>REQUEST (url)</code></pre>
+                <blockquote> ruft eine HTML-Seite von einem WWW-Server ab oder ruft ein CGI-Script
+                    auf einem WWW-Server auf. Die URL der HTML-Seite bzw. des CGI-Scripts muss mit
+                    dem Argument <code>url</code> angegeben werden. Für das Argument
+                        <code>url</code> kann eine Variable oder eine in Anführungszeichen
+                    eingeschlossene Zeichenfolge angegeben werden. </blockquote><p
+                    class="right x-small">Handbuch 502f.</p></div>
+            <div class="step"><h2 class="red">Beispiel</h2>
+                <pre><code>$$ MODE TUSCRIPT,{}
+url="http://www.example.com"
+TRACE 
+daten=REQUEST (url)
+ENDTRACE</code></pre></div>
+            
+            <div class="step">
+                <h2 class="red">Webinhalt in TUSTEP-Datei holen</h2>
+                <h3>DECODE | FILE/ERASE/PRINT </h3>
+                <pre><code>$$ MODE TUSCRIPT,{}
+url="http://www.example.com"
+daten=REQUEST (url)
+daten=DECODE (daten,utf8)
+ERROR/STOP CREATE ("example.tf",seq-o,-std-)
+FILE/ERASE/PRINT "example.tf" = daten</code></pre>
+            </div>
+            <div class="step">
+                <h2 class="red">WWW-Bilddatei in lokale Datei laden</h2>
+                <pre><code>$$ MODE TUSCRIPT,{}
+url4img="http://www.steinheim-institut.de/daten/picshha/xl/9014_HE_0307290335.jpg"
+ERROR/STOP CREATE ("test.png",fdf-o,-std-)
+FILE/ERASE/BINARY "test.png" = REQUEST (url4img)
+BROWSE "test.png"</code></pre>
+            </div>
+            <div class="step">
+                <h2 class="red">Webinhalt in TUSTEP-Datei holen</h2>
+                <h3>READ/STREAM/VARIABLE/UTF8</h3>
+                <pre><code>$$ MODE TUSCRIPT,{}
+url="http://www.deutschestextarchiv.de/book/download_xml/urbanitzky_electricitaet_1885"
+daten=REQUEST (url)
+ERROR/STOP CREATE ("dta_tei.tf",seq-o,-std-)
+STACK lg CREATE
+ACCESS q: READ/STREAM/RECORDS/variable/utf8 daten s,a+t+e,typ,stack
+ACCESS z: WRITE/ERASE/STREAM "dta_tei.tf" s.z/u,a+t+e
+ LOOP/999999999
+  READ/EXIT q
+  WRITE z
+ ENDLOOP
+ENDACCESS q
+ENDACCESS/PRINT z  </code></pre>
+            </div>
+            <div class="step">
+                <h2 class="red">Schnittstelle auslesen</h2>
+                <h3>Sturm-API</h3>
+                <blockquote>Über die Datenschnittstelle lassen sich sämtliche Text- und
+                    Registerdaten der Edition als TEI/XML oder TEI/JSON beziehen. Der Einstiegspunkt
+                    für diese API befindet sich unter folgender Adresse:
+                        <code>https://sturm-edition.de/api/files</code></blockquote>
+                <p class="x-small right"><a href="https://sturm-edition.de/api/files">TEI
+                        XML-Dateien</a></p>
+                <blockquote>Eine Besonderheit stellt der files Einstiegspunkt dar. Über ihn kann
+                    jede XML-​Datei der STURM-​Edition im TEI/XML-​Volltext bezogen
+                    werden.</blockquote>
+                <p class="x-small right"><a
+                        href="https://sturm-edition.de/ressourcen/schnittstellen.html">Technische
+                        Schnittstellen </a></p>
+            </div>
+            <div class="step">
+                <h2 class="red">API auslesen</h2>
+                <pre><code>$$ MODE TUSCRIPT,{}
+api="https://sturm-edition.de/api/files"
+files=REQUEST (api)
+ERROR/STOP CREATE ("sturmfiles.tf",seq-o,-std-)
+ACCESS q: READ/STREAM/RECORDS/variable/utf8 files s,a+t+e
+ACCESS z: WRITE/ERASE/STREAM "sturmfiles.tf" s.z/u,a+t+e
+ LOOP/999999999
+  READ/EXIT q
+  WRITE z
+ ENDLOOP
+ENDACCESS q
+ENDACCESS/PRINT z</code></pre>
+            </div>
+            <div class="step">
+                <h2 class="red">Briefe auswählen</h2>
+                <pre><code>$$ MODE TUSCRIPT,{}
+api="https://sturm-edition.de/api/files"
+files=REQUEST (api)
+ERROR/STOP CREATE ("sturmbriefe.tf",seq-o,-std-)
+ACCESS q: READ/STREAM/RECORDS/variable/utf8 files s,a+t+e
+ACCESS z: WRITE/ERASE/STREAM "sturmbriefe.tf" s.z/u,aa+t+ee
+ LOOP/999999999
+  READ/EXIT q
+  IF (a.hn."idno"&amp;&amp;a.ha."type") THEN
+  type=GET_ATTRIBUTE (a,"type")
+  IF (type=="letter"&amp;&amp;t.nc." v1 ") WRITE z
+  ENDIF
+ ENDLOOP
+ENDACCESS q
+ENDACCESS/PRINT z</code></pre>
+            </div>
+            <div class="step">
+                <h2 class="red">Briefe lokal speichern</h2>
+                <pre><code>$$ MODE TUSCRIPT,{}
+api="https://sturm-edition.de/api/files"
+files=REQUEST (api)
+
+FETCH directory = TUSTEP_DSK
+IF ("xml"!='project'.on.TUSTEP_DSK) ERROR/STOP CREATE ("xml",project,-std-)
+pfad2xmldir=ADJUST_PATH (directory,"xml")
+count=0
+ERROR/STOP CREATE ("sturmbriefe.tf",seq-o,-std-)
+ACCESS q: READ/STREAM/RECORDS/variable/utf8 files s,a+t+e
+ LOOP/999999999
+  READ/EXIT q
+  IF (a.hn."idno"&amp;&amp;.ha."type") THEN
+   type=GET_ATTRIBUTE (a,"type")
+   IF (type=="letter"&amp;&amp;t.nc." v1 ") THEN
+    url2file=ADJUST_PATH (api,t)
+    pfad2file=ADJUST_PATH (pfad2xmldir,t)
+    DEFINE "xml" = $pfad2file
+    ERROR/STOP CREATE ("xml",FDF-o,-)
+    FILE/ERASE/BINARY "xml" = REQUEST (url2file)
+    ERROR/STOP CLOSE ("xml")
+    count=count+1
+    IF (count>9) EXIT
+    PRINT count,": ",t
+   ENDIF
+  ENDIF
+ ENDLOOP
+ENDACCESS/PRINT q</code></pre>
+            </div>
+            
+            <!-- <div class="step"><h2 class="red">Syntax</h2>
+                <pre><code>REQUEST (url,query)</code></pre>
+                <blockquote>Erwartet ein CGI-Script einen Querystring (METHODE=GET), kann für das
+                    Argument <code>query</code> eine Variable oder eine in Anführungszeichen
+                    eingeschlossene Zeichenfolge angegeben werden; <br />erwartet ein CGI-Script
+                    Daten von der Standard- Eingabe (METHODE=POST), kann für das Argument query eine
+                    Sternvariable angegeben werden; andernfalls kann das Argument query
+                    einschließlich des davor stehenden Kommas weggelassen werden.</blockquote><p
+                    class="right x-small">Handbuch 503</p>
+            </div>-->
+            <div class="step">
+                <h2 class="red">02</h2>
+                <h3>#*export – XML2RTF</h3>
+            </div>
+            <div class="step">
+                <h2 class="red">Versuchsaufbau</h2>
+                <blockquote>Mit dem TUSTEP Modul <code>#*export</code> lassen sich nicht nur xml-strukturierte TUSTEP-Dateien nach Microsoft-Word exportieren, sondern mit diesem Modul lässt sich auch relativ einfach eine Lese/Druck-Fassung (Worddatei) von XML-Dokumente erzeugen. 
+                    Im TUSTEP-LAB soll der Weg von einem einfachen (!) TEI-XML Dokument zu einer Druckfassung gemeinsam begangen werden.</blockquote>
+            </div>
+            <div class="step"><h2 class="red">Syntax</h2>
+                <table>
+                    <tr><th colspan="2">#*export</th></tr>
+                    <tr><td>QUELLE</td><td>Name der Quelldatei</td></tr>
+                    <tr><td>ZIEL</td><td>Name der Zieldatei</td></tr>
+                    <tr><td>MODUS</td><td></td></tr>
+                    <tr><td>LOESCHEN</td><td>- | +</td></tr>
+                    <tr><td>DEFINITIONEN</td><td>Datei | - </td></tr>
+                    <tr><td>OPTIONEN</td><td>- | BLANK</td></tr>
+                    <tr><td>ANZEIGEN</td><td>- | +</td></tr>
+                    <tr><td>PROTOKOLL</td><td>+ | datei</td></tr>
+                </table>
+                <p>
+                <code>#*export,datei.tf,datei.rtf,lo=+,de=definitionen.tf,an=+</code></p>
+            </div>
+            <div class="step">
+                <h2 class="red">###</h2>
+                <pre><code>$$ MODE TUSCRIPT,{}
+url="http://www.deutschestextarchiv.de/book/download_xml/urbanitzky_electricitaet_1885"
+daten=REQUEST (url)
+ERROR/STOP CREATE ("dta_lg.tf",seq-o,-std-)
+STACK lg CREATE
+ACCESS q: READ/STREAM/RECORDS/variable/utf8 daten s,a+t+e,typ,stack
+ACCESS z: WRITE/ERASE/STREAM "dta_lg.tf" s.z/u,a+t+e
+LOOP/999999999
+READ/EXIT q
+
+IF (a.hn."lg") THEN
+IF (a.ha."type") a=START_TAG ("section")
+STACK lg PUSH a
+ENDIF
+IF (e.hn."lg") THEN
+STACK lg POP e
+e=END_TAG (e)
+ENDIF
+IF (stack.ct." &lt;lg&gt; ")  THEN
+t=EXCHANGE (t,":^&amp;^#x{4}?;:#\[{-2=}\]:")
+WRITE z
+ENDIF
+ENDLOOP
+ENDACCESS q
+ENDACCESS/PRINT z</code></pre>
+            </div>
+            <div class="step"><h2>###</h2>
+                <pre><code>ERROR/STOP CREATE ("def4dta_lg.tf",seq-o,-std-)
+MODE DATA
+$$ FILE/ERASE "def4dta_lg.tf"
+&lt;dstyle font="Didot"/&gt;
+&lt;pstyle name=head style=b/&gt;
+&lt;alias alias=lb tag=br/&gt;
+&lt;pstyle name=lg linefeed=18 ignore=n/&gt;
+&lt;cstyle name=l style=ni ignore=n/&gt;
+&lt;cstyle name=hi style=i ignore=rendition/&gt;
+$$ ENDFILE
+$$ MODE TUSCRIPT,{}
+ERROR/STOP CREATE ("dta_lg.rtf",fdf-o,-std-)
+EXECUTE #*export,dta_lg.tf,dta_lg.rtf,lo=+,de=def4dta_lg.tf,an=+</code></pre></div>
+            <div class="step"><h2 class="red">###</h2><pre><code>$$ MODE TUSCRIPT,{}
+SECTION request
+url="http://www.deutschestextarchiv.de/book/download_xml/urbanitzky_electricitaet_1885"
+daten=REQUEST (url)
+ERROR/STOP CREATE ("dta_all.tf",seq-o,-std-)
+STACK lg CREATE
+ACCESS q: READ/STREAM/RECORDS/variable/utf8 daten s,a+t+e,typ,stack
+ACCESS z: WRITE/ERASE/STREAM "dta_all.tf" s.z/u,a+t+e
+ LOOP/999999999
+ READ/EXIT q
+ IF (stack.nc." &lt;teiHeader&gt; "," &lt;back&gt; "," &lt;front&gt; ") THEN
+ t=EXCHANGE (t,":^&amp;^#x{4}?;:#\[{-2=}\]:")
+ IF (a.hn."lg") THEN
+ IF (a.ha."type") a=START_TAG ("")
+ STACK lg PUSH a
+ ENDIF
+ IF (e.hn."lg") THEN
+ STACK lg POP e
+ e=END_TAG (e)
+ ENDIF
+ WRITE z
+ ENDIF
+ ENDLOOP
+ENDACCESS q
+ENDACCESS/PRINT z
+ENDSECTION
+DO REQUEST
+</code></pre></div>
+            <div class="step"><h2 class="red">###</h2>
+            <pre><code>ERROR/STOP CREATE ("def4dta_all.tf",seq-o,-std-)
+MODE DATA
+$$ FILE/ERASE "def4dta_all.tf"
+&lt;alias alias=TEI tag=document/&gt;
+&lt;alias alias=hi tag=dummy ignore=rendition/&gt;
+&lt;alias alias=lb tag=br/&gt;
+&lt;alias alias=pb tag=dummy/&gt;
+&lt;alias alias=cb tag=dummy/&gt;
+&lt;alias alias=fw tag=ignore/&gt;
+&lt;alias alias=formula tag=dummy/&gt;
+&lt;alias alias=milestone tag=dummy/&gt;
+&lt;alias alias=figure tag=dummy/&gt;
+&lt;alias alias=div tag=dummy/&gt;
+&lt;pstyle name=head before=18 after=18 style=b/&gt;
+&lt;alias alias=body tag=section/&gt;
+&lt;alias alias=text tag=dummy/&gt;
+&lt;alias alias=table tag=ignore/&gt;
+&lt;alias alias=row tag=tr/&gt;
+&lt;alias alias=cell tag=tc/&gt;
+&lt;alias alias=note tag=fn ignore=place'n'xml:id/&gt;
+&lt;alias alias=list tag=dummy/&gt;
+&lt;alias alias=choice tag=dummy/&gt;
+&lt;cstyle name=sic end="[!]"/&gt;
+&lt;cstyle name=supplied start=[[ end="]]"/&gt;
+&lt;alias alias=corr tag=mn/&gt;
+&lt;alias alias=item tag=li/&gt;
+&lt;pstyle name=lg linefeed=18 ignore=n/&gt;
+&lt;cstyle name=l style=ni ignore=n/&gt;
+$$ ENDFILE
+$$ MODE TUSCRIPT,{}
+ERROR/STOP CREATE ("dta_all.rtf",FDF-o,-std-)
+EXECUTE #*export,dta_all.tf,dta_all.rtf,lo=+,de=def4dta_all.tf,an=+
+</code></pre></div>
+            <!-- <div class="step"><h2 class="red">Beispiel</h2></div>-->
+            <div class="step">
+                <div class="centered">
+                    <h1 class="red">F I N I S</h1>
+                    <h2>סוף דבר הכל נשמע</h2>
+                </div>
+                <div class="centered down-100">
+                    <h3>
+                        <a href="#literature">Software und Literature</a></h3><p class="x-small"
+                    ></p>
+                </div>
+            </div>
+            <div class="step" id="literature">
+                <h2 class="red">Literature &amp; Software</h2>
+                <ul>
+                    <li></li>
+                </ul></div>
+            <div class="step">
+                <h4>Software</h4>
+                <ul class="small line-height-one-five">
+                    <li>
+                        <a href="https://github.com/impress/impress.js">Impress.js</a>
+                        (presentation) </li>
+                    <li><a href=""></a></li>
+                    <li>
+                        <a href="https://github.com/dimsemenov/Magnific-Popup">Magnific Popup</a>
+                        (Lightbox) </li>
+                    <li>
+                        <a href="http://unitegallery.net/">Unite Gallery</a> (photo gallery) </li>
+                </ul>
+            </div>
+        </div>
+        <!-- jquery -->
+        <script src="vendor/jquery/jquery-1.11.0.min.js"></script>
+        <!-- unite gallery -->
+        <script type="text/javascript" src="vendor/unitegallery/js/unitegallery.min.js"></script>
+        <script type="text/javascript" src="vendor/unitegallery/themes/tiles/ug-theme-tiles.js"></script>
+        <script type="text/javascript" src="resources/js/unite.gallery.js"></script>
+        <!-- chartist -->
+        <!--<script src="vendor/chartist/chartist.min-0.9.7.js"></script>
+        <script src="resources/js/chartist.charts.js"></script>-->
+        <!-- codemirror -->
+        <!--<script src="vendor/codemirror/lib/codemirror.js"></script>
+        <script src="vendor/codemirror/addon/edit/matchbrackets.js"></script>
+        <script src="vendor/codemirror/mode/sparql/sparql.js"></script>
+        <script>
+        var editor = CodeMirror.fromTextArea(document.getElementById("sparql"), {
+            mode: "application/sparql-query",
+            matchBrackets: true,
+            lineNumbers: true,
+            viewportMargin: Infinity
+        });
+    </script>-->
+        <!-- highlight -->
+        <script src="vendor/highlight/highlight.pack-9.3.0.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script src="resources/js/hljs.linenumbering.js"></script>
+        <!-- swiper -->
+        <script src="vendor/swiper/swiper.min.js"></script>
+        <script>
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            spaceBetween: 30,
+            hashnav: true
+        });
+    </script>
+        <!-- magnific popup -->
+        <script src="vendor/magnific-popup/jquery.magnific-popup.min-1.1.0.js"></script>
+        <script src="resources/js/magnific-popup.lightbox.js"></script>
+        <!-- impress.mod.js -->
+        <script src="vendor/impress/impress.fork.js"></script>
+        <script src="vendor/impress/impress-slidenum.js"></script>
+        <script>
+        var obj = impress();
+        obj.init();
+        initSlideNo(obj);
+    </script>
+        <!-- Links to TEI-Documentation -->
+        <!--<script src="resources/js/tei-documentation-links.js">-->
+        <!--</script>-->
+    </body>
+</html>
