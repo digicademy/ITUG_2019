@@ -389,8 +389,7 @@ ACCESS z: WRITE/ERASE/STREAM "dta_all.tf" s.z/u,a+t+e
 ENDACCESS q
 ENDACCESS/PRINT z
 ENDSECTION
-DO REQUEST
-</code></pre></div>
+DO REQUEST</code></pre></div>
             <div class="step"><h2 class="red">Definitionen</h2>
             <pre><code>ERROR/STOP CREATE ("def4dta_all.tf",seq-o,-std-)
 MODE DATA
@@ -411,20 +410,20 @@ $$ FILE/ERASE "def4dta_all.tf"
 &lt;alias alias=table tag=ignore/&gt;
 &lt;alias alias=row tag=tr/&gt;
 &lt;alias alias=cell tag=tc/&gt;
-&lt;alias alias=note tag=fn ignore=place'n'xml:id/&gt;
+&lt;alias alias=note tag=fn ignore=place'n'xml:id'next'prev/&gt;
 &lt;alias alias=list tag=dummy/&gt;
 &lt;alias alias=choice tag=dummy/&gt;
+&lt;alias alias=space tag=dummy/&gt;
 &lt;cstyle name=sic end="[!]"/&gt;
 &lt;cstyle name=supplied start=[[ end="]]"/&gt;
-&lt;alias alias=corr tag=mn/&gt;
+&lt;cstyle name=corr start=^^&lt; end=^^&gt;/&gt;
 &lt;alias alias=item tag=li/&gt;
 &lt;pstyle name=lg linefeed=18 ignore=n/&gt;
 &lt;cstyle name=l style=ni ignore=n/&gt;
 $$ ENDFILE
 $$ MODE TUSCRIPT,{}
 ERROR/STOP CREATE ("dta_all.rtf",FDF-o,-std-)
-EXECUTE #*export,dta_all.tf,dta_all.rtf,lo=+,de=def4dta_all.tf,an=+
-</code></pre></div>
+EXECUTE #*export,dta_all.tf,dta_all.rtf,lo=+,de=def4dta_all.tf,an=+</code></pre></div>
             <!-- <div class="step"><h2 class="red">Beispiel</h2></div>-->
             <div class="step">
                 <div class="centered">
