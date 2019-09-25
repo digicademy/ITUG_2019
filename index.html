@@ -143,11 +143,12 @@
             </table>
             </div>
             <div class="step"><h2 class="red">Segmentdatei <q>skripte</q></h2>
-                <p>Sämtliche Skripte, die in diesem Workshop vorgestellt werden, befinden sich als Segmente in der Datei <q>skripte</q>. Sie wird <a href="data/skripte">hier zum Download</a> zur Verfügung gestellt.</p></div>
+                <p>Sämtliche Skripte, die in diesem Workshop vorgestellt werden, befinden sich als Segmente in der Datei <q>skripte</q>. </p><p>Sie wird <a href="data/skripte">zum Download</a> zur Verfügung gestellt.</p></div>
             <div class="step">
                 <h2 class="red">01</h2>
                 <h3>REQUEST</h3>
             </div>
+           
             <div class="step">
                 <h2 class="red">Versuchsaufbau</h2>
                 <blockquote>Die TUSCRIPT-Funktion <code>REQUEST</code> ermöglicht es "Inhalte" aus
@@ -164,12 +165,13 @@
                         <code>url</code> kann eine Variable oder eine in Anführungszeichen
                     eingeschlossene Zeichenfolge angegeben werden. </blockquote><p
                     class="right x-small">Handbuch 502f.</p></div>
-            <div class="step"><h2 class="red">Beispiel</h2>
+            <div class="step"><h2 class="red">Request (url)</h2>
                 <pre><code>$$ MODE TUSCRIPT,{}
 url="http://www.example.com"
 TRACE 
 daten=REQUEST (url)
-ENDTRACE</code></pre></div>
+ENDTRACE</code></pre>
+            <p class="x-small right">Segment <strong>REQUEST_01</strong></p></div>
             
             <div class="step">
                 <h2 class="red">Webinhalt in TUSTEP-Datei holen</h2>
@@ -180,14 +182,16 @@ daten=REQUEST (url)
 daten=DECODE (daten,utf8)
 ERROR/STOP CREATE ("example.tf",seq-o,-std-)
 FILE/ERASE/PRINT "example.tf" = daten</code></pre>
+                <p class="x-small right">Segment <strong>REQUEST_02</strong></p>
             </div>
             <div class="step">
                 <h2 class="red">Webbild in lokale Datei laden</h2>
                 <pre><code>$$ MODE TUSCRIPT,{}
 url4img="http://www.steinheim-institut.de/daten/picshha/xl/9014_HE_0307290335.jpg"
-ERROR/STOP CREATE ("test.png",fdf-o,-std-)
-FILE/ERASE/BINARY "test.png" = REQUEST (url4img)
+ERROR/STOP CREATE ("test.jpg",fdf-o,-std-)
+FILE/ERASE/BINARY "test.jpg" = REQUEST (url4img)
 BROWSE "test.png"</code></pre>
+                <p class="x-small right">Segment <strong>REQUEST_03</strong></p>
             </div>
             <div class="step">
                 <h2 class="red">Webinhalt in TUSTEP-Datei holen</h2>
@@ -195,6 +199,7 @@ BROWSE "test.png"</code></pre>
                 <pre><code>$$ MODE TUSCRIPT,{}
 url="http://www.deutschestextarchiv.de/book/download_xml/urbanitzky_electricitaet_1885"
 daten=REQUEST (url)
+
 ERROR/STOP CREATE ("dta_tei.tf",seq-o,-std-)
 
 ACCESS q: READ/STREAM/variable/utf8 daten s,a+t+e,typ,stack
@@ -205,17 +210,16 @@ ACCESS z: WRITE/ERASE/STREAM "dta_tei.tf" s.z/u,a+t+e
  ENDLOOP
 ENDACCESS q
 ENDACCESS/PRINT z  </code></pre>
+                <p class="x-small right">Segment <strong>REQUEST_04</strong></p>
             </div>
             <div class="step">
                 <h2 class="red">Schnittstelle auslesen</h2>
-                <h3>Sturm-API</h3>
+                <h3>Die API der digitalen Sturm-Edition</h3>
                 <blockquote>Über die Datenschnittstelle lassen sich sämtliche Text- und
                     Registerdaten der Edition als TEI/XML oder TEI/JSON beziehen. Der Einstiegspunkt
                     für diese API befindet sich unter folgender Adresse:
-                        <code>https://sturm-edition.de/api/files</code></blockquote>
-                <p class="x-small right"><a href="https://sturm-edition.de/api/files">TEI
-                        XML-Dateien</a></p>
-                <blockquote>Eine Besonderheit stellt der files Einstiegspunkt dar. Über ihn kann
+                    <a href="https://sturm-edition.de/api/files"> <code>https://sturm-edition.de/api/files</code></a><br/>…<br/>
+                Eine Besonderheit stellt der files Einstiegspunkt dar. Über ihn kann
                     jede XML-​Datei der STURM-​Edition im TEI/XML-​Volltext bezogen
                     werden.</blockquote>
                 <p class="x-small right"><a
@@ -236,6 +240,7 @@ ACCESS z: WRITE/ERASE/STREAM "sturmfiles.tf" s.z/u,a+t+e
  ENDLOOP
 ENDACCESS q
 ENDACCESS/PRINT z</code></pre>
+                <p class="x-small right">Segment <strong>STURM_01</strong></p>
             </div>
             <div class="step">
                 <h2 class="red">Briefe auswählen</h2>
@@ -247,13 +252,16 @@ ACCESS q: READ/STREAM/RECORDS/variable/utf8 files s,a+t+e
 ACCESS z: WRITE/ERASE/STREAM "sturmbriefe.tf" s.z/u,aa+t+ee
  LOOP/999999999
   READ/EXIT q
-  IF (a.hn."idno"&amp;&amp;a.ha."type") THEN
-  type=GET_ATTRIBUTE (a,"type")
-  IF (type=="letter"&amp;&amp;t.nc." v1 ") WRITE z
-  ENDIF
+   IF (a.hn."idno") THEN
+    version=GET_ATTRIBUTE (a,"version")
+    IF (version==1) CYCLE
+    type=GET_ATTRIBUTE (a,"type")
+    IF (type=="letter") WRITE z
+   ENDIF
  ENDLOOP
 ENDACCESS q
 ENDACCESS/PRINT z</code></pre>
+                <p class="x-small right">Segment <strong>STURM_02</strong></p>
             </div>
             <div class="step">
                 <h2 class="red">Briefe lokal speichern</h2>
@@ -285,7 +293,7 @@ ACCESS q: READ/STREAM/RECORDS/variable/utf8 files s,a+t+e
   ENDIF
  ENDLOOP
 ENDACCESS/PRINT q</code></pre>
-            </div>
+<p class="x-small right">Segment <strong>STURM_03</strong></p>            </div>
             
             <!-- <div class="step"><h2 class="red">Syntax</h2>
                 <pre><code>REQUEST (url,query)</code></pre>
@@ -320,6 +328,7 @@ ENDACCESS/PRINT q</code></pre>
                 </table>
                 <p>
                 <code>#*export,datei.tf,datei.rtf,lo=+,de=definitionen.tf,an=+</code></p>
+                <p class="x-small right"><strong>#*zebe,export</strong></p>
             </div>
             <div class="step">
                 <h2 class="red">Einlesen, auswählen, … </h2>
@@ -334,21 +343,21 @@ LOOP/999999999
 READ/EXIT q
 
 IF (a.hn."lg") THEN
-IF (a.ha."type") a=START_TAG ("section")
-STACK lg PUSH a
+ IF (a.ha."type") a=START_TAG ("section")
+ STACK lg PUSH a
 ENDIF
 IF (e.hn."lg") THEN
-STACK lg POP e
-e=END_TAG (e)
+ STACK lg POP e
+ e=END_TAG (e)
 ENDIF
 IF (stack.ct." &lt;lg&gt; ")  THEN
-t=EXCHANGE (t,":^&amp;^#x{4}?;:#\[{-2=}\]:")
-WRITE z
+ t=EXCHANGE (t,":^&amp;^#x{4}?;:#\[{-2=}\]:")
+ WRITE z
 ENDIF
 ENDLOOP
 ENDACCESS q
 ENDACCESS/PRINT z</code></pre>
-            </div>
+<p class="x-small right">Segment <strong>dta_lg</strong></p>            </div>
             <div class="step"><h2 class="red">… ausgeben</h2>
                 <pre><code>ERROR/STOP CREATE ("def4dta_lg.tf",seq-o,-std-)
 MODE DATA
@@ -362,7 +371,7 @@ $$ FILE/ERASE "def4dta_lg.tf"
 $$ ENDFILE
 $$ MODE TUSCRIPT,{}
 ERROR/STOP CREATE ("dta_lg.rtf",fdf-o,-std-)
-EXECUTE #*export,dta_lg.tf,dta_lg.rtf,lo=+,de=def4dta_lg.tf,an=+</code></pre></div>
+EXECUTE #*export,dta_lg.tf,dta_lg.rtf,lo=+,de=def4dta_lg.tf,an=+</code></pre><p class="x-small right">Segment <strong>dta_lg</strong></p> </div>
             <div class="step"><h2 class="red">xml2rtf</h2><pre><code>$$ MODE TUSCRIPT,{}
 SECTION request
 url="http://www.deutschestextarchiv.de/book/download_xml/urbanitzky_electricitaet_1885"
@@ -389,7 +398,7 @@ ACCESS z: WRITE/ERASE/STREAM "dta_all.tf" s.z/u,a+t+e
 ENDACCESS q
 ENDACCESS/PRINT z
 ENDSECTION
-DO REQUEST</code></pre></div>
+DO REQUEST</code></pre><p class="x-small right">Segment <strong>dta_all</strong></p> </div>
             <div class="step"><h2 class="red">Definitionen</h2>
             <pre><code>ERROR/STOP CREATE ("def4dta_all.tf",seq-o,-std-)
 MODE DATA
@@ -423,7 +432,7 @@ $$ FILE/ERASE "def4dta_all.tf"
 $$ ENDFILE
 $$ MODE TUSCRIPT,{}
 ERROR/STOP CREATE ("dta_all.rtf",FDF-o,-std-)
-EXECUTE #*export,dta_all.tf,dta_all.rtf,lo=+,de=def4dta_all.tf,an=+</code></pre></div>
+EXECUTE #*export,dta_all.tf,dta_all.rtf,lo=+,de=def4dta_all.tf,an=+</code></pre><p class="x-small right">Segment <strong>dta_all</strong></p></div>
             <!-- <div class="step"><h2 class="red">Beispiel</h2></div>-->
             <div class="step">
                 <div class="centered">
