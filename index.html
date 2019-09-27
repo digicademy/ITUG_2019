@@ -461,19 +461,19 @@ STACK lg CREATE
 ACCESS q: READ/STREAM/RECORDS/variable/utf8 daten s,a+t+e,typ,stack
 ACCESS z: WRITE/ERASE/STREAM "dta_all.tf" s.z/u,a+t+e
  LOOP/999999999
- READ/EXIT q
- IF (stack.nc." &lt;teiHeader&gt; "," &lt;back&gt; "," &lt;front&gt; ") THEN
- t=EXCHANGE (t,":^&amp;^#x{4}?;:#\[{-2=}\]:")
- IF (a.hn."lg") THEN
- IF (a.ha."type") a=START_TAG ("")
- STACK lg PUSH a
- ENDIF
- IF (e.hn."lg") THEN
- STACK lg POP e
- e=END_TAG (e)
- ENDIF
- WRITE z
- ENDIF
+  READ/EXIT q
+  IF (stack.nc." &lt;teiHeader&gt; "," &lt;back&gt; "," &lt;front&gt; ") THEN
+   t=EXCHANGE (t,":^&amp;^#x{4}?;:#\[{-2=}\]:")
+   IF (a.hn."lg") THEN
+    IF (a.ha."type") a=START_TAG ("")
+    STACK lg PUSH a
+   ENDIF
+   IF (e.hn."lg") THEN
+    STACK lg POP e
+    e=END_TAG (e)
+   ENDIF
+   WRITE z
+  ENDIF
  ENDLOOP
 ENDACCESS q
 ENDACCESS/PRINT z
@@ -521,7 +521,7 @@ EXECUTE #*export,dta_all.tf,dta_all.rtf,lo=+,de=def4dta_all.tf,an=+</code></pre>
             </div>
             <div class="step" id="literature">
                 <h2 class="red">Präsentationen</h2>
-                <ul>
+                <ul class="line-height-one-five">
                     <li><a href="https://digicademy.github.io/2018_ITUG/#/start">Request and
                             Access</a> Webservices abfragen und Daten anreichern, Potsdam ITUG
                         2018</li>
