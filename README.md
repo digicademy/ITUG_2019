@@ -7,5 +7,5 @@ Autoren: [Hans-Werner Bartz](http://www.adwmainz.de/mitarbeiterinnen/profil/hans
 
 Digitale Akademie@Akademy of Sciences and Literature | Mainz 
 
-online: [https://github.com/digicademy/2019_ITUG](https://github.com/digicademy/2019_ITUG/)
+online: [https://digicademy.github.io/ITUG_2019](https://digicademy.github.io/ITUG_2019)
 
